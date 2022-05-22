@@ -18,9 +18,29 @@ namespace DigiLib_V2.Controllers
         }
 
         // GET: UsuariosController
-        public ActionResult Index()
+        public ActionResult Index(string query, string tipoPesquisa)
         {
-            return View( db.USUARIOS.ToList() );
+            if(string.IsNullOrEmpty(query))
+            {
+                return View(db.USUARIOS.ToList());
+            }
+            else if(tipoPesquisa == "Todos")
+            {
+                return View(db.USUARIOS.Where(a => a.Login.Contains(query) || a.Nome.Contains(query)));
+
+            }
+            else if(tipoPesquisa == "PorNome")
+            {
+                return View(db.USUARIOS.Where(a => a.Nome.Contains(query)));
+            }
+            else if(tipoPesquisa == "PorLogin")
+            {
+                return View(db.USUARIOS.Where(a => a.Login.Contains(query)));
+            }
+            else
+            {
+                return View(db.USUARIOS.ToList());
+            }
         }
 
         // GET: UsuariosController/Details/5
