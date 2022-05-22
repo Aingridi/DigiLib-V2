@@ -11,5 +11,7 @@ namespace DigiLib_V2
         public Contexto(DbContextOptions<Contexto> options) : base(options) { }
 
         public DbSet<Usuarios> USUARIOS { get; set; }
+
+        public DbSet<Livros> LIVROS { get; set; }
     }
 }
