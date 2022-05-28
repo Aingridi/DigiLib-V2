@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using DigiLib_V2.Entidades;
-namespace DigiLib_V2
+using DigiLibV2.Entidades;
+namespace DigiLibV2
 {
     public class Contexto : DbContext
     {

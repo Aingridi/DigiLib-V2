@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DigiLib_V2.Entidades
+namespace DigiLibV2.Entidades
 {
     public class Usuarios
     {

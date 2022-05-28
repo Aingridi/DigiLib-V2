@@ -1,4 +1,4 @@
-﻿using DigiLib_V2.Entidades;
+﻿using DigiLibV2.Entidades;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DigiLib_V2.Controllers
+namespace DigiLibV2.Controllers
 {
     public class UsuariosController : Controller
     {

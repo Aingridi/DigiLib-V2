@@ -1,6 +1,6 @@
 using System;
 
-namespace DigiLib_V2.Models
+namespace DigiLibV2.Models
 {
     public class ErrorViewModel
     {

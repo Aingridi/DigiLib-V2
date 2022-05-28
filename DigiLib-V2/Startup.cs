@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DigiLib_V2
+namespace DigiLibV2
 {
     public class Startup
     {

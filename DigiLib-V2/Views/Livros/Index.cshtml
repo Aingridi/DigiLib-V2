@@ -1,0 +1,93 @@
+﻿@model IEnumerable<DigiLibV2.Entidades.Livros>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="card">
+    <div class="card-header">Pesquisar Livros</div>
+    <div class="card-body">
+        <form action="/Livros/Index" method="get">
+        <div class="row">
+            <div class="col-4">
+                <select name="TipoPesquisa">
+                    <option value="Todos">Pesquisar por todos</option>
+                    <option value="PorTitulo">Pesquisar por título</option>
+                    <option value="PorAutor">Pesquisar por autor</option>
+                    <option value="Todos">Pesquisar por Todos</option>
+                    <option value="Todos">Pesquisar por Todos</option>
+                </select>
+                <a href="/Livros/Create" class="btn btn-success">
+                    Novo Livro
+                </a>
+            </div>
+            <div class="col-4">
+                <input type="text" name="query" class="form-control" placeholder="Digite sua busca" />
+            </div>
+            <div class="col-4">
+                <button class="btn btn-primary" type="submit">Pesquisar</button>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Titulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Autor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Editora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ano_Lancamento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Edicao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Palavra_Chave)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Autor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Editora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ano_Lancamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Edicao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Palavra_Chave)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,4 +1,4 @@
-﻿using DigiLib_V2.Models;
+﻿using DigiLibV2.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DigiLib_V2.Controllers
+namespace DigiLibV2.Controllers
 {
     public class HomeController : Controller
     {

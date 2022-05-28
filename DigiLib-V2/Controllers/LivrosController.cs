@@ -1,4 +1,5 @@
-﻿using DigiLib_V2.Entidades;
+﻿using DigiLibV2;
+using DigiLibV2.Entidades;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -6,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DigiLib_V2.Controllers
+namespace DigiLibV2.Controllers
 {
     public class LivrosController : Controller
     {
@@ -17,9 +18,17 @@ namespace DigiLib_V2.Controllers
             db = contexto;
         }
         // GET: LivrosController
-        public ActionResult Index()
+        public ActionResult Index(string query)
         {
-            return View( db.LIVROS.ToList());
+            if(string.IsNullOrEmpty(query))
+            {
+                return View(db.LIVROS.ToList());
+            }
+            else
+            {
+                return View(db.LIVROS.Where(a=> a.Titulo.Contains(query) || a.Autor.Contains(query) || a.Editora.Contains(query)));
+            }
+            
         }
 
         // GET: LivrosController/Details/5
@@ -54,16 +63,18 @@ namespace DigiLib_V2.Controllers
         // GET: LivrosController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            return View( db.LIVROS.Where(a=> a.Id == id).FirstOrDefault() );
         }
 
         // POST: LivrosController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, Livros collection)
         {
             try
             {
+                db.LIVROS.Update(collection);
+                db.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -75,22 +86,11 @@ namespace DigiLib_V2.Controllers
         // GET: LivrosController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            db.LIVROS.Remove(db.LIVROS.Where(a=> a.Id == id).FirstOrDefault() );
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
-        // POST: LivrosController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        
     }
 }
