@@ -8,19 +8,19 @@
     <div class="card-header">Pesquisar Livros</div>
     <div class="card-body">
         <form action="/Livros/Index" method="get">
-        <div class="row">
-            <div class="col-4">
-                <select name="TipoPesquisa">
-                    <option value="Todos">Pesquisar por todos</option>
-                    <option value="PorTitulo">Pesquisar por título</option>
-                    <option value="PorAutor">Pesquisar por autor</option>
+        <div class="row">           
+                <select name="tipoPesquisa" class="form-control">
                     <option value="Todos">Pesquisar por Todos</option>
-                    <option value="Todos">Pesquisar por Todos</option>
+                    <option value="PorTitulo">Pesquisar por Título</option>
+                    <option value="PorAutor">Pesquisar por Autor</option>
+                    <option value="PorEditora">Pesquisar por Editora</option>
+                    <option value="PorAnoLancamento">Pesquisar por Ano Lançamento</option>
+                    <option value="PorEdicao">Pesquisar por Edição</option>
+                    <option value="PorPalavraChave">Pesquisar por Palavra-chave</option>
                 </select>
                 <a href="/Livros/Create" class="btn btn-success">
                     Novo Livro
-                </a>
-            </div>
+                </a>            
             <div class="col-4">
                 <input type="text" name="query" class="form-control" placeholder="Digite sua busca" />
             </div>
