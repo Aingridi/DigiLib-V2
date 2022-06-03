@@ -14,17 +14,9 @@ namespace DigiLibV2.Entidades
         public int Ano_Lancamento { get; set; }
         public int Edicao { get; set; }
         public string Palavra_Chave { get; set; }
+        public int CategoriaId { get; set; }
+        public Categoria categoria { get; set; }
 
-        internal bool Ano_Lancamento(string query) {
-            throw new NotImplementedException();
-        }
 
-        internal bool Edicao(string query) {
-            throw new NotImplementedException();
-        }
-
-        internal bool Palavra_Chave(string query) {
-            throw new NotImplementedException();
-        }
     }
 }

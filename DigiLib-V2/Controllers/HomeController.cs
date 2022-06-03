@@ -1,14 +1,17 @@
 ﻿using DigiLibV2.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace DigiLibV2.Controllers
 {
+    [Authorize(AuthenticationSchemes = "CookieAuthentication")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

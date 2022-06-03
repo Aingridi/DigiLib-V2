@@ -1,4 +1,5 @@
 ﻿using DigiLibV2.Entidades;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace DigiLibV2.Controllers
 {
+    [Authorize(AuthenticationSchemes = "CookieAuthentication")]
     public class UsuariosController : Controller
     {
         private readonly Contexto db;
