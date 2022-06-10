@@ -9,18 +9,17 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <a class="navbar-brand" href="#">
-                <img src="~/Logo-DigiLib.png" width="200" height="200">
-            </a>
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">DigiLib</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Programação Web</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">DigiLib</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">
                                 Início
@@ -28,34 +27,25 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Livros" asp-action="Index">
-                                Cadastro - Livros
+                                Cadastro | Pesquisa
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Imagens" asp-action="Upload">
-                                Upload de Imagens - Livros
+                            <a class="nav-link  text-dark" asp-area="" asp-controller="Imagens" asp-action="Upload">
+                                Upload de Imagens
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Livros" asp-action="Index">
-                                Busca Avançada - Livros
-                            </a>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Livros" asp-action="Index">
-                                Acervo - Livros
-                            </a>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Usuarios" asp-action="Index">
+                            <a class="nav-link  text-dark" asp-area="" asp-controller="Usuarios" asp-action="Index">
                                 Lista de Usuários
                             </a>
                         </li>
-                    </ul>
-
-                    <ul class="navbar-nav ms-auto text-white">
                         <li class="nav-item">
-                            <a class="nav-link" href="~/Login/Logoff/">Sair do Sistema</a>
+                            <a class="nav-link text-dark" href="~/Login/Logoff/">
+                                Sair do Sistema
+                            </a>
                         </li>
-                    </ul> 
+                    </ul>
                 </div>
             </div>
         </nav>
